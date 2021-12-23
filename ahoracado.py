@@ -1,6 +1,6 @@
 import os
 
-
+#funcion para leer el archivo
 def archivo_read():
     with open('./data.txt', 'r', encoding ='utf-8') as f:
         lista_palabras = []
