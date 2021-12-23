@@ -18,8 +18,16 @@ def run():
     #primero se limpa la consola.
     os.system('cls')
 
-    #se lee el archivo data.txt y se arroja la palabra aleatorioa
-    print(archivo_read())
+    #se lee el archivo data.txt y se arroja la palabra aleatorioa y se asigna a una variable
+    palabra =archivo_read()
+    print (palabra)
+
+    #vamos a colocar la palabra dentro de un diccionaro
+    my_dict = {i: palabra[i] for i in range(len(palabra))}
+    print(my_dict)
+
+
+
 
 
 
