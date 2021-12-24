@@ -27,7 +27,7 @@ def run():
     print(my_dict)
    
    #vamos a entrar en un ciclo para que el usuario verifique la palabra.
-
+    lista_oculta =[]
     contador = 0
     while contador != len(palabra):
 
@@ -37,11 +37,14 @@ def run():
         assert not letra.isnumeric(),'solo se pueden ingresar letras, no números'
 
         #se va a hacer una lista oculta para guardar las posiciones de la letra
-        lista_oculta =[]
+        
         for i in range(len(palabra)):
             if letra == palabra[i]:
-                lista_oculta.append(i)
+                lista_oculta.insert(i,my_dict.get(i))
                 contador = contador +1
+
+            
+        
 
         print(lista_oculta)
 
