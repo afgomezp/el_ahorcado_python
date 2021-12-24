@@ -45,7 +45,9 @@ def run():
         
         for i, j in lista_final:
             if j==letra:
-                lista_oculta
+                lista_oculta.insert(i,j)
+        
+        print (lista_oculta)
 
 
     
