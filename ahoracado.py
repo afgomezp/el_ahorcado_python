@@ -15,7 +15,8 @@ def archivo_read():
 
 #se crea la funcion para mostrar el espacio de palabras.
 def espacios(my_dict,palabra):
-    pass
+    if len(my_dict)==0:
+        print('_ '*len(palabra))
 
 
 
@@ -55,6 +56,7 @@ def run():
         
         print (my_dict)
         print (len(my_dict))
+        print(espacios(my_dict,palabra))
 
 
 
