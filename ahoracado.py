@@ -13,6 +13,11 @@ def archivo_read():
     random_word = random.choice(lista_palabras)
     return random_word
 
+#se crea la funcion para mostrar el espacio de palabras.
+def espacios(my_dict,palabra):
+    pass
+
+
 
 def run():
     #primero se limpa la consola.
@@ -32,7 +37,7 @@ def run():
     print(lista_final)
 
    #vamos a entrar en un ciclo para que el usuario verifique la palabra.
-    lista_oculta =[]
+    my_dict={}
     contador = 0
     while contador != len(palabra):
 
@@ -44,10 +49,14 @@ def run():
         #se va a hacer una lista oculta para guardar las posiciones de la letra
         
         for i, j in lista_final:
-            if j==letra:
-                lista_oculta.insert(i,j)
+            if letra==j:
+                my_dict[i]=j
+                contador =contador+1
         
-        print (lista_oculta)
+        print (my_dict)
+        print (len(my_dict))
+
+
 
 
     
