@@ -22,10 +22,15 @@ def run():
     palabra =archivo_read()
     print (palabra)
 
-    #vamos a colocar la palabra dentro de un diccionaro
-    my_dict = {i: palabra[i] for i in range(len(palabra))}
-    print(my_dict)
+    #vamos a colocar la palabra dentro de una lista
+    my_list = [i for i in palabra]
+    print(my_list)
    
+   #vamos a crear una nueva lista que este enumerada
+
+    lista_final = list(enumerate(my_list))
+    print(lista_final)
+
    #vamos a entrar en un ciclo para que el usuario verifique la palabra.
     lista_oculta =[]
     contador = 0
@@ -38,17 +43,12 @@ def run():
 
         #se va a hacer una lista oculta para guardar las posiciones de la letra
         
-        for i in range(len(palabra)):
-            if letra == palabra[i]:
-                lista_oculta.insert(i,my_dict.get(i))
-                contador = contador +1
-
-            
-        
-
-        print(lista_oculta)
+        for i, j in lista_final:
+            if j==letra:
+                lista_oculta
 
 
+    
         
         
 
