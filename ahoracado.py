@@ -19,25 +19,23 @@ def espacios(my_dict,palabra):
         print('_ '*len(palabra))
 
 
-
+#-------- aqui se se define la función principal del juego-------------------------------
 def run():
-    #primero se limpa la consola.
+
+ #primero se limpa la consola.
     os.system('cls')
 
-    #se lee el archivo data.txt, se arroja la palabra aleatorioa y se asigna a una variable
+ #se lee el archivo data.txt, se arroja la palabra aleatorioa y se asigna a una variable
     palabra =archivo_read()
     print (palabra)
 
-    #vamos a colocar la palabra dentro de una lista
+#vamos a colocar la palabra dentro de una lista
     my_list = [i for i in palabra]
-    print(my_list)
    
-   #vamos a crear una nueva lista que enumere los caracterteres de la palabra
-
+#vamos a crear una nueva lista que enumere los caracterteres de la palabra
     lista_final = list(enumerate(my_list))
-    print(lista_final)
 
-   #vamos a entrar en un ciclo para que el usuario verifique la palabra.
+#vamos a entrar en un ciclo para que el usuario verifique la palabra.
     my_dict={}
     contador = 0
     
@@ -45,11 +43,10 @@ def run():
 
         letra = input('ingrese una letra: ')
 
-        # se va a colocar una afirmacion tipo assert preguntando si es string(true), o numero(false)
+ # se va a colocar una afirmacion tipo assert preguntando si es string(true), o numero(false)
         assert not letra.isnumeric(),'solo se pueden ingresar letras, no números'
 
-        #se va a hacer una lista oculta para guardar las posiciones de la letra
-        
+ #se va a hacer un diccionario, donde en caso de que se acierte la letra, se guarde en la llave la posicion y en el valor la letra.  
         for i, j in lista_final:
             if letra==j:
                 my_dict[i]=j
@@ -58,8 +55,8 @@ def run():
         print (my_dict)
         print (len(my_dict))
 
+ # se crea una interfaz donde se muestra la posicion de las palabras acertadas
         for i in range(len(palabra)):
-
             if bool(my_dict.get(i))==True:
                 print(my_dict.get(i), end= " ")
             else:
