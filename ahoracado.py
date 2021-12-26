@@ -43,7 +43,7 @@ def run():
 #se va a hacer un diccionario, donde en caso de que se acierte la letra, se guarde en la llave la posicion y en el valor la letra.
     my_dict= {}
 
-#se corre la funcion de la interfaz.
+#se limpia pantalla y se corre la funcion de la interfaz.
     interfaz(my_dict,palabra)
 
 
@@ -55,17 +55,27 @@ def run():
         letra = input('ingrese una letra: ')
 
  # se va a colocar una afirmacion tipo assert preguntando si es string(true), o numero(false)
-        assert not letra.isnumeric(),'solo se pueden ingresar letras, no números'
+
+        try:
+            if letra.isalpha() ==True:
 
  #se va llenar el diccionario previamente creado y llamado my_dict 
-        for i, j in lista_final:
-            if letra==j:
-                my_dict[i]=j
-                contador =contador+1
-        
-#se invoca nuevamente la funcion interfaz para que actualice la interfaz.
-        interfaz(my_dict,palabra)
+                for i, j in lista_final:
+                    if letra==j:
+                        my_dict[i]=j
+                        contador =contador+1
+            
+    #se invoca nuevamente la funcion interfaz para que actualice la interfaz.
+                    interfaz(my_dict,palabra)
+            else:
+                raise TypeError
+        except TypeError:
+            print ('no ingresaste una letra')
+    
 
+             
+        
+    
        
 
 if __name__ =='__main__':
