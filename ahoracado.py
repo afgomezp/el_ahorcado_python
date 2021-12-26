@@ -32,7 +32,7 @@ def run():
     my_list = [i for i in palabra]
     print(my_list)
    
-   #vamos a crear una nueva lista que este enumerada
+   #vamos a crear una nueva lista que enumere los caracterteres de la palabra
 
     lista_final = list(enumerate(my_list))
     print(lista_final)
@@ -40,6 +40,7 @@ def run():
    #vamos a entrar en un ciclo para que el usuario verifique la palabra.
     my_dict={}
     contador = 0
+    
     while contador != len(palabra):
 
         letra = input('ingrese una letra: ')
@@ -53,16 +54,16 @@ def run():
             if letra==j:
                 my_dict[i]=j
                 contador =contador+1
-        
+
         print (my_dict)
         print (len(my_dict))
-        print(espacios(my_dict,palabra))
 
-
-
-
-    
+        for i in my_dict:
+            print(my_dict.get(i), end="")
         
+        print('\n')
+    
+    
         
 
 if __name__ =='__main__':
