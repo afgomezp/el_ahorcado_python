@@ -16,7 +16,7 @@ def archivo_read():
 #se crea la funcion para mostrar la interfaz del juego, se muestras espacios sin adivinar y letras adivinadas.
 def interfaz(my_dict,palabra):
     os.system('cls')
-    print('Adivina la palabra oculta que se muestra a continuación:')
+    print('Adivina la palabra oculta que se muestra a continuación:' + '\n')
     for i in range(len(palabra)):
         if bool(my_dict.get(i))==True:
             print(my_dict.get(i), end= " ")
@@ -24,6 +24,9 @@ def interfaz(my_dict,palabra):
             print ('_', end=" ")
         
     print('\n')
+
+    if len(my_dict)==len(palabra):
+        print('Ganaste!')
 
 
 #-------- aqui se se define la función principal del juego-------------------------------
@@ -41,14 +44,10 @@ def run():
     my_dict= {}
 
 #se corre la funcion de la interfaz.
-
     interfaz(my_dict,palabra)
 
 
-
-
-#vamos a entrar en un ciclo para que el usuario verifique la palabra.
-    my_dict={}
+#vamos a entrar en un ciclo para que el usuario verifique la palabra.  
     contador = 0
     
     while contador != len(palabra):
@@ -63,14 +62,11 @@ def run():
             if letra==j:
                 my_dict[i]=j
                 contador =contador+1
-
-        print (my_dict)
-        print (len(my_dict))
-
-
-    
-    
         
+#se invoca nuevamente la funcion interfaz para que actualice la interfaz.
+        interfaz(my_dict,palabra)
+
+       
 
 if __name__ =='__main__':
     run()
