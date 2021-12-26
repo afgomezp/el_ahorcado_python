@@ -58,8 +58,12 @@ def run():
         print (my_dict)
         print (len(my_dict))
 
-        for i in my_dict:
-            print(my_dict.get(i), end="")
+        for i in range(len(palabra)):
+
+            if bool(my_dict.get(i))==True:
+                print(my_dict.get(i), end= " ")
+            else:
+                print ('_', end=" ")
         
         print('\n')
     
