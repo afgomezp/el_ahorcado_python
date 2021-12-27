@@ -49,7 +49,6 @@ def run():
 
  #se lee el archivo data.txt, se arroja la palabra aleatorioa y se asigna a una variable
     palabra =archivo_read()
-    print(palabra)
 
 #usamos nuestra función para retirar tildes de las palabras
     normalize(palabra)
