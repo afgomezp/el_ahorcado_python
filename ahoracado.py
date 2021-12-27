@@ -25,34 +25,52 @@ def interfaz(my_dict,palabra):
         
     print('\n')
 
-    if len(my_dict)==len(palabra):
+    if (len(my_dict))==len(palabra):
         print('Ganaste!')
 
+#funcion para quitar las tildes en las palabras
+def normalize(palabra):
+    replacements = (
+        ("á", "a"),
+        ("é", "e"),
+        ("í", "i"),
+        ("ó", "o"),
+        ("ú", "u"),
+    )
+
+    for a, b in replacements:
+        palabra = palabra.replace(a, b)
+
+    return(palabra)
+    
 
 #-------- aqui se se define la función principal del juego-------------------------------
 def run():
 
  #se lee el archivo data.txt, se arroja la palabra aleatorioa y se asigna a una variable
     palabra =archivo_read()
+    print(palabra)
 
+#usamos nuestra función para retirar tildes de las palabras
+    normalize(palabra)
+  
 #vamos a colocar la palabra dentro de una lista y a enumerarla en otra lista
     my_list = [i for i in palabra]
-   
     lista_final = list(enumerate(my_list))  
     
 #se va a hacer un diccionario, donde en caso de que se acierte la letra, se guarde en la llave la posicion y en el valor la letra.
     my_dict= {}
-
+    contador = 0
 #se limpia pantalla y se corre la funcion de la interfaz.
     interfaz(my_dict,palabra)
 
 
 #vamos a entrar en un ciclo para que el usuario verifique la palabra.  
-    contador = 0
+    
     
     while contador != len(palabra):
 
-        letra = input('ingrese una letra: ')
+        letra = input('ingrese una letra sin tildes: ')
 
  # se va a colocar una afirmacion tipo assert preguntando si es string(true), o numero(false)
 
@@ -66,17 +84,12 @@ def run():
                         contador =contador+1
             
     #se invoca nuevamente la funcion interfaz para que actualice la interfaz.
-                    interfaz(my_dict,palabra)
+                interfaz(my_dict,palabra)
             else:
                 raise TypeError
         except TypeError:
             print ('no ingresaste una letra')
     
-
-             
-        
-    
-       
 
 if __name__ =='__main__':
     run()
