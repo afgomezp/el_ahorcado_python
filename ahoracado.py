@@ -70,8 +70,11 @@ def run():
     while contador != len(palabra):
 
         letra = input('ingrese una letra sin tildes: ')
+        letra = letra.lower()
 
- # se va a colocar una afirmacion tipo assert preguntando si es string(true), o numero(false)
+        print(letra)
+
+""" # se va a colocar una afirmacion tipo assert preguntando si es string(true), o numero(false)
 
         try:
             if letra.isalpha() ==True:
@@ -87,7 +90,7 @@ def run():
             else:
                 raise TypeError
         except TypeError:
-            print ('no ingresaste una letra')
+            print ('no ingresaste una letra')"""
     
 
 if __name__ =='__main__':
