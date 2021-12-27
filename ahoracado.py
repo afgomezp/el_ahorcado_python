@@ -74,7 +74,7 @@ def run():
 
         print(letra)
 
-""" # se va a colocar una afirmacion tipo assert preguntando si es string(true), o numero(false)
+# se va a colocar una afirmacion tipo assert preguntando si es string(true), o numero(false)
 
         try:
             if letra.isalpha() ==True:
@@ -90,7 +90,7 @@ def run():
             else:
                 raise TypeError
         except TypeError:
-            print ('no ingresaste una letra')"""
+            print ('no ingresaste una letra')
     
 
 if __name__ =='__main__':
